@@ -149,8 +149,8 @@ $include-html-grid-classes: false;
 // Grid Variables
 //
 
-// $row-width: em-calc(1000);
-// $column-gutter: em-calc(30);
+$row-width: em-calc(950);
+// $column-gutter: px-calc(30);
 // $total-columns: 12;
 
 //
@@ -1325,4 +1325,5 @@ $include-html-grid-classes: false;
 // $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
 
 @import 'foundation';
-@import 'savings_multiplied'
+@import 'savings_multiplied';
+@import 'style'

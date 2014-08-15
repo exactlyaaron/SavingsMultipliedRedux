@@ -1,0 +1,227 @@
+$primary-green: #8CB82C;
+$primary-blue: #75CBD2;
+$primary-light-blue: #D5F1F0;
+$primary-purple: #702C8E;
+$primary-pink: #EC008C;
+$light-pink: desaturate(lighten(#EC008C, 40), 45);
+$medium-pink: darken($light-pink, 10%);
+
+::-webkit-input-placeholder {
+   color: $medium-pink;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: $medium-pink;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $medium-pink;
+}
+
+:-ms-input-placeholder {
+   color: $medium-pink;
+}
+
+.clear {
+  clear:both;
+}
+
+.header-container {
+  background-color: $primary-light-blue;
+  padding: 40px 0 0 0;
+}
+
+ul#devise_navigation {
+  text-align:right;
+  list-style-type:none;
+  @include grid-row();
+  padding: 0 0 15px 0;
+
+  li {
+    display:inline-block;
+    padding: 0px 10px;
+  }
+
+  li:first-child {
+    border-right: 2px solid $primary-blue;
+  }
+}
+
+header {
+  border-top-left-radius: 2em;
+  border-top-right-radius: 2em;
+  background: #fff;
+  position:relative;
+  @include grid-row();
+
+  h1 {
+    margin: 0;
+    padding:0;
+    top: -25px;
+    max-width: 345px;
+    @include grid-column($columns:5);
+  }
+
+  .header-right {
+    display:inline-block;
+    float:right;
+    margin:45px 0px 0px 0;
+    text-align:center;
+    @include grid-column($columns:7);
+
+    h2 {
+      color:$primary-blue;
+      font-family: 'cooper-black-std';
+      font-size: 19px;
+    }
+
+    ul#page_navigation {
+      margin: 0;
+
+      li {
+        display:inline-block;
+        padding: 0px 9px;
+        border-radius: 1em;
+        width: 23%;
+        text-align:center;
+
+        a {
+          color:#fff;
+        }
+      }
+
+      li:first-child {
+        background-color: $primary-blue;
+      }
+
+      li:nth-child(2) {
+        background-color: $primary-green;
+      }
+
+      li:nth-child(3) {
+        background-color: $primary-purple;
+      }
+
+      li:nth-child(4) {
+        background-color: $primary-pink;
+      }
+    }
+  }
+}
+
+.main-nav {
+  background-color: $light-pink;
+  padding: 10px 0;
+  text-align:center;
+
+  ul#main_navigation {
+    list-style-type:none;
+    @include grid-row();
+
+    li {
+      font-family: 'cooper-black-std';
+      @include grid-column(2);
+
+      a {
+        color: darken($primary-pink, 20%);
+      }
+
+      form {
+        margin: 0;
+
+        input[type='text']{
+          border-radius:1em;
+          height: 23px;
+          border: 2px solid $medium-pink;
+          margin: 0;
+          color: $medium-pink;
+          font-family:'Helvetica';
+        }
+
+        input[type='submit'] {
+          display:none;
+        }
+
+        label {
+          display:none;
+        }
+      }
+    }
+  }
+}
+
+.content-container {
+  background-color: $primary-blue;
+  padding: 0 0 40px 0;
+
+  #content {
+    background-color:#fff;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    padding: 20px 0;
+    @include grid-row;
+  }
+}
+
+footer {
+  text-align:center;
+
+  a {
+    color:$primary-light-blue;
+    font-size: 14px;
+  }
+
+  ul {
+    margin-top: 20px;
+
+    li {
+      padding: 0px 15px;
+      border-right: 2px solid $primary-light-blue;
+    }
+
+    li:last-child {
+      border-right:none;
+    }
+  }
+}
+
+.dotted-border {
+  @include grid-row();
+  width: 90%;
+  margin: 0 auto;
+  height: 25px;
+  background-position: center;
+  background-image: url(image-path('homepage/dotted_line_44_36.png'));
+}
+
+$small-range: (0em, 30em); /* 0, 640px */
+$small-only: "#{$screen} and (max-width: 40em)" !default;
+
+@media #{$small-only} {
+  .header-container {
+    padding: 20px 0 0 0;
+  }
+  header {
+
+    h1, .header-right  {
+      @include grid-column(12);
+    }
+
+    h1 {
+      float:none;
+      margin: 0 auto;
+      text-align:center;
+    }
+
+    .header-right {
+      margin-top: 0;
+    }
+  }
+
+  ul#main_navigation {
+
+    li {
+      @include grid-column(4);
+    }
+  }
+}
