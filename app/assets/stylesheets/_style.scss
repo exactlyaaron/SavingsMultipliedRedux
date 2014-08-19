@@ -1,3 +1,5 @@
+@import "font-awesome";
+
 $primary-green: #8CB82C;
 $primary-blue: #75CBD2;
 $primary-light-blue: #D5F1F0;
@@ -5,9 +7,15 @@ $primary-purple: #702C8E;
 $primary-pink: #EC008C;
 $light-pink: desaturate(lighten(#EC008C, 40), 45);
 $medium-pink: darken($light-pink, 10%);
+$dark-green: darken($primary-green, 7%);
 
 ::-webkit-input-placeholder {
    color: $medium-pink;
+   font-family: 'Tahoma';
+   &::before {
+     font-family: fontAwesome;
+     content: '\f002';
+   }
 }
 
 :-moz-placeholder { /* Firefox 18- */
@@ -121,6 +129,8 @@ header {
     li {
       font-family: 'cooper-black-std';
       @include grid-column(2);
+      padding: 0;
+      font-size: 20px;
 
       a {
         color: darken($primary-pink, 20%);
@@ -133,9 +143,8 @@ header {
           border-radius:1em;
           height: 23px;
           border: 2px solid $medium-pink;
-          margin: 0;
+          margin: 5px 0 0 0;
           color: $medium-pink;
-          font-family:'Helvetica';
         }
 
         input[type='submit'] {
@@ -158,8 +167,100 @@ header {
     background-color:#fff;
     border-bottom-left-radius: 2em;
     border-bottom-right-radius: 2em;
-    padding: 20px 0;
+    padding: 20px 10px;
     @include grid-row;
+  }
+}
+
+.left-column {
+
+  h2 {
+    color: $primary-green;
+    font-family: 'cooper-black-std';
+    font-size: 22px;
+  }
+
+  .left-subhead {
+    h3 {
+      color: $primary-blue;
+      font-size: 20px;
+      display:inline-block;
+      font-weight: 400;
+    }
+    img {
+      display:inline-block;
+      width: 30px;
+      height: auto;
+      margin: 0 5px 0 0;
+    }
+  }
+}
+
+.shop-btn {
+  margin: 20px 0;
+  height: 25px;
+  background-position: center;
+  background-image: url('homepage/dotted_line_44_36.png');
+
+  a {
+    color:#fff;
+    display:inline-block;
+    border-radius: 1em;
+    font-size: 18px;
+    padding: 3px 15px;
+    border:none;
+    box-shadow:none;
+    font-weight: 400;
+    background: $primary-pink;
+    left: 60%;
+    position:relative;
+  }
+}
+
+p.goal {
+  color:$dark-green;
+  line-height: 2;
+}
+
+.welcome-container {
+  .welcome-text {
+    // width: 80%;
+    display:inline-block;
+    margin: 0 20px 0 0;
+    padding: 20px 0 0 0;
+
+    h4 {
+      color:$dark-green;
+      font-family: 'cooper-black-std';
+      font-size: 20px;
+    }
+
+    p {
+      color:$dark-green;
+      font-size: 18px;
+    }
+  }
+
+  img {
+    display:inline-block;
+    width: 15%;
+  }
+}
+
+#child_images img {
+  margin-bottom: 4px;
+}
+
+ul.links {
+  @include grid-row;
+  padding: 10px;
+  text-align:center;
+  list-style-type:none;
+
+  li {
+    @include grid-column(3);
+
+
   }
 }
 
@@ -187,8 +288,8 @@ footer {
 
 .dotted-border {
   @include grid-row();
-  width: 90%;
-  margin: 0 auto;
+  width: 95%;
+  margin: 20px auto 0 auto;
   height: 25px;
   background-position: center;
   background-image: url(image-path('homepage/dotted_line_44_36.png'));
